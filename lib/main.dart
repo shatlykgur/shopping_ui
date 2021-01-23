@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_ui/sepetim.dart';
+import 'package:shopping_ui/urunler.dart';
 
 void main() => runApp(MyApp());
 
@@ -30,8 +32,8 @@ class _AnaSayfaState extends State<AnaSayfa> {
     super.initState();
 
     _icerikler = [
-      Text("İçerik 1"),
-      Text("İçerik 2"),
+      Urunler(),
+      Sepetim(),
     ];
   }
 

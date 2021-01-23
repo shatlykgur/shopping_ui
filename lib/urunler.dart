@@ -8,8 +8,10 @@ class Urunler extends StatefulWidget {
 class _UrunlerState extends State<Urunler> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Center(
+      child: Text(
+        "Ürünler İçeriği"
+      ),
     );
   }
 }
