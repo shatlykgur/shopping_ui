@@ -38,7 +38,7 @@ class _KategoriState extends State<Kategori> {
     } else if (widget.kategori == "temizlik") {
       gosterilecekListe = [
         Container(color: Colors.blue),
-        Container(color: Colors.green),
+        Container(color: Colors.cyan),
         Container(color: Colors.teal),
       ];
     }
@@ -70,7 +70,7 @@ class _KategoriState extends State<Kategori> {
               ),
               borderRadius: BorderRadius.circular(20.0),
             ),
-          )
+          ),
         ],
       ),
     );
