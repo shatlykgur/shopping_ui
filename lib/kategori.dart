@@ -18,33 +18,80 @@ class _KategoriState extends State<Kategori> {
 
     if (widget.kategori == "temel gıda") {
       gosterilecekListe = [
-        urunKarti(),
-        Container(color: Colors.blue),
-        Container(color: Colors.green),
-        Container(color: Colors.teal),
+        urunKarti(
+          "Zeytin yağı",
+          "30 TL",
+          "https://cdn.pixabay.com/photo/2015/06/26/15/31/oil-822618_960_720.jpg",
+        ),
+        urunKarti(
+          "Süt",
+          "5 TL",
+          "https://images.pexels.com/photos/2638026/pexels-photo-2638026.jpeg",
+        ),
+        urunKarti(
+          "Yumurta",
+          "25 TL",
+          "https://images.pexels.com/photos/162712/egg-white-food-protein-162712.jpeg",
+        ),
+        urunKarti(
+          "Çay",
+          "10 TL",
+          "https://images.pexels.com/photos/1417945/pexels-photo-1417945.jpeg",
+        ),
+        urunKarti(
+          "Mayonez",
+          "7 TL",
+          "https://images.pexels.com/photos/2365338/pexels-photo-2365338.jpeg",
+        ),
       ];
     } else if (widget.kategori == "şekerleme") {
       gosterilecekListe = [
-        Container(color: Colors.red),
-        Container(color: Colors.blue),
+        urunKarti(
+          "Çikolata",
+          "8 TL",
+          "https://images.pexels.com/photos/1775285/pexels-photo-1775285.jpeg",
+        ),
+        urunKarti(
+          "Pasta",
+          "23 TL",
+          "https://images.pexels.com/photos/264892/pexels-photo-264892.jpeg",
+        ),
       ];
     } else if (widget.kategori == "içecekler") {
       gosterilecekListe = [
-        Container(color: Colors.teal),
-        Container(color: Colors.red),
-        Container(color: Colors.blue),
-        Container(color: Colors.green),
+        urunKarti(
+          "Kola",
+          "7 TL",
+          "https://images.pexels.com/photos/2983100/pexels-photo-2983100.jpeg",
+        ),
+        urunKarti(
+          "Maden Suyu",
+          "3 TL",
+          "https://images.pexels.com/photos/357577/pexels-photo-357577.jpeg",
+        ),
+        urunKarti(
+          "Meyve Suyu",
+          "5 TL",
+          "https://images.pexels.com/photos/96974/pexels-photo-96974.jpeg",
+        ),
       ];
     } else if (widget.kategori == "temizlik") {
       gosterilecekListe = [
-        Container(color: Colors.blue),
-        Container(color: Colors.cyan),
-        Container(color: Colors.teal),
+        urunKarti(
+          "Sıvı Sabun",
+          "20 TL",
+          "https://images.pexels.com/photos/3987142/pexels-photo-3987142.jpeg",
+        ),
+        urunKarti(
+          "Sünger",
+          "5 TL",
+          "https://images.pexels.com/photos/4239099/pexels-photo-4239099.jpeg",
+        ),
       ];
     }
   }
 
-  Widget urunKarti() {
+  Widget urunKarti(String isim, String fiyat, String resimYolu) {
     return Container(
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20.0),
@@ -65,10 +112,29 @@ class _KategoriState extends State<Kategori> {
             decoration: BoxDecoration(
               image: DecorationImage(
                 image: NetworkImage(
-                    "https://cdn.pixabay.com/photo/2015/06/26/15/31/oil-822618_960_720.jpg"),
+                  resimYolu,
+                ),
                 fit: BoxFit.cover,
               ),
               borderRadius: BorderRadius.circular(20.0),
+            ),
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            isim,
+            style: TextStyle(
+              fontSize: 14.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.grey[600],
+            ),
+          ),
+          SizedBox(height: 8.0),
+          Text(
+            fiyat,
+            style: TextStyle(
+              fontSize: 14.0,
+              fontWeight: FontWeight.bold,
+              color: Colors.red[400],
             ),
           ),
         ],
